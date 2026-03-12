@@ -15,7 +15,8 @@ try {
 
 try {
     console.log('Requiring jquery v4...')
-    const jQuery4 = require('jquery4')(window)
+    const { jQueryFactory } = require('jquery4/factory')
+    const jQuery4 = jQueryFactory(window)
     console.log('  typeof jQuery4:', typeof(jQuery4))
 } catch(err) {
     console.error('\x1b[31m', err.stack.split('\n').slice(0, 4).join('\n'), '\n    ...')
