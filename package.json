@@ -1,0 +1,16 @@
+{
+  "name": "jquery-node-example",
+  "version": "1.0.0",
+  "description": "A test of using jQuery with Nodejs",
+  "license": "MMIT",
+  "author": "Jordan Kasper",
+  "type": "commonjs",
+  "main": "index.js",
+  "peerDependencies": {
+    "jquery3": "npm:jquery@^3.7.1",
+    "jquery4": "npm:jquery@^4.0.0"
+  },
+  "dependencies": {
+    "jsdom": "^28.1.0"
+  }
+}
