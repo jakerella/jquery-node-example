@@ -1,23 +1,22 @@
 
-const assert = require('node:assert')
 const JSDOM = require('jsdom').JSDOM
 
+console.log('Creating DOM...')
 const window = (new JSDOM('<html></html>')).window
-assert(typeof(window.document), 'object')
-console.log('typeof window.document:', typeof(window.document))
+console.log('  typeof window.document:', typeof(window.document))
 
 try {
+    console.log('Requiring jquery v3...')
     const jQuery3 = require('jquery3')(window)
-    assert(typeof(jQuery3), 'function')
-    console.log('typeof jQuery3:', typeof(jQuery3))
+    console.log('  typeof jQuery3:', typeof(jQuery3))
 } catch(err) {
-    console.error('jQuery3 not initialized:', err.message)
+    console.error('\x1b[31m', err.stack.split('\n').slice(0, 4).join('\n'), '\n    ...')
 }
 
 try {
+    console.log('Requiring jquery v4...')
     const jQuery4 = require('jquery4')(window)
-    assert(typeof(jQuery4), 'function')
-    console.log('typeof jQuery4:', typeof(jQuery4))
+    console.log('  typeof jQuery4:', typeof(jQuery4))
 } catch(err) {
-    console.error('jQuery4 not initialized:', err.message)
+    console.error('\x1b[31m', err.stack.split('\n').slice(0, 4).join('\n'), '\n    ...')
 }
